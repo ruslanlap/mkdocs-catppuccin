@@ -6,6 +6,8 @@ repo_name: ruslanlap/mkdocs-catppuccin
 
 theme:
   name: material
+  logo: assets/logo.png
+  favicon: assets/logo.png
   features:
     - navigation.tabs
     - navigation.sections
