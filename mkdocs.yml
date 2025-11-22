@@ -1,0 +1,92 @@
+site_name: MkDocs with Catppuccin Theme
+site_description: Beautiful MkDocs documentation with all 4 Catppuccin flavors
+site_url: https://ruslanlap.github.io/mkdocs-catppuccin/
+repo_url: https://github.com/ruslanlap/mkdocs-catppuccin
+repo_name: ruslanlap/mkdocs-catppuccin
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+
+  # Catppuccin Color Palette Configuration
+  # Users can toggle between all 4 flavors
+  palette:
+    # Catppuccin Latte (Light mode)
+    - scheme: latte
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to Frappé
+
+    # Catppuccin Frappé (Dark mode - coolest)
+    - scheme: frappe
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to Macchiato
+
+    # Catppuccin Macchiato (Dark mode - warm)
+    - scheme: macchiato
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-partly-cloudy
+        name: Switch to Mocha
+
+    # Catppuccin Mocha (Dark mode - warmest)
+    - scheme: mocha
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-cloudy
+        name: Switch to Latte
+
+# Navigation structure
+nav:
+  - Home: index.md
+  - Configuration Guide: configuration.md
+
+# Extra CSS for Catppuccin themes
+extra_css:
+  - stylesheets/extra.css
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+# Copyright notice
+copyright: Copyright &copy; 2025 ruslanlap
+
+# Additional configuration
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ruslanlap/mkdocs-catppuccin
+  generator: false
