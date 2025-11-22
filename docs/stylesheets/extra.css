@@ -940,3 +940,38 @@
   background-color: var(--md-code-hl-color);
 }
 
+
+/* ========================================
+   Content Tabs (pymdownx.tabbed) Styling
+   ======================================== */
+
+/* Inactive tabs */
+.md-typeset .tabbed-labels .tabbed-label {
+  color: var(--md-default-fg-color);
+  opacity: 0.6;
+  transition: opacity 0.2s, color 0.2s, border-bottom-color 0.2s;
+}
+
+/* Hover state */
+.md-typeset .tabbed-labels .tabbed-label:hover {
+  color: var(--md-accent-fg-color);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+/* Active tab - The complex selector is needed to override Material's default */
+.md-typeset .tabbed-set > input:nth-child(1):checked ~ .tabbed-labels > :nth-child(1),
+.md-typeset .tabbed-set > input:nth-child(2):checked ~ .tabbed-labels > :nth-child(2),
+.md-typeset .tabbed-set > input:nth-child(3):checked ~ .tabbed-labels > :nth-child(3),
+.md-typeset .tabbed-set > input:nth-child(4):checked ~ .tabbed-labels > :nth-child(4),
+.md-typeset .tabbed-set > input:nth-child(5):checked ~ .tabbed-labels > :nth-child(5) {
+  color: var(--md-accent-fg-color) !important;
+  border-bottom-color: var(--md-accent-fg-color) !important;
+  opacity: 1;
+}
+
+/* Tab content container */
+.md-typeset .tabbed-content {
+  background-color: transparent;
+  border-radius: 0 0 0.2rem 0.2rem;
+}
