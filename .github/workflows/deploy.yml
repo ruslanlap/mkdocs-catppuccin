@@ -3,8 +3,7 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main
-      - claude/add-color-settings-01UEzJtSM6Zpuzpqb1xPZFjL
+      - master
   workflow_dispatch:
 
 permissions:
