@@ -423,19 +423,38 @@
   color: var(--md-accent-fg-color);
 }
 
-/* Search box */
+/* Search box - comprehensive styling */
 .md-search__input {
-  background-color: var(--md-code-hl-color);
-  color: var(--md-typeset-color);
+  background-color: var(--md-code-bg-color) !important;
+  color: var(--md-default-fg-color) !important;
   border: 0.05rem solid var(--md-code-hl-color);
 }
 
 .md-search__input::placeholder {
-  color: var(--md-code-hl-comment-color);
+  color: var(--md-default-fg-color) !important;
+  opacity: 0.6 !important;
 }
 
-.md-search__input:hover {
-  background-color: var(--md-code-hl-color);
+.md-search__input:hover,
+.md-search__input:focus {
+  background-color: var(--md-code-bg-color) !important;
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Search overlay */
+.md-search__form {
+  background-color: var(--md-code-bg-color);
+}
+
+/* Search output */
+.md-search__output {
+  background-color: var(--md-default-bg-color);
+}
+
+.md-search-result__meta {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
 }
 
 /* Sidebar */
@@ -455,11 +474,29 @@
 }
 
 /* Inline code */
-.md-typeset :not(pre) > code {
-  background-color: var(--md-code-hl-color);
-  padding: 0.1rem 0.3rem;
-  border-radius: 0.2rem;
+.md-typeset :not(pre)>code {}
+
+/* Code copy button - beautiful styling */
+.md-clipboard {
+
+  border-radius: 0.3rem;
+  opacity: 0.9;
 }
+
+.md-clipboard:hover {
+  background-color: var(--md-accent-fg-color) !important;
+
+}
+
+.md-clipboard:focus {}
+
+/* Copy button icon */
+.md-clipboard svg {
+  fill: currentColor;
+}
+
+/* Copy button success state */
+.md-clipboard--copied {}
 
 /* Links */
 .md-typeset a:hover {
@@ -595,163 +632,163 @@
 }
 
 /* Admonition text content */
-.md-typeset .admonition > p,
-.md-typeset .admonition > ul,
-.md-typeset .admonition > ol,
-.md-typeset details > p {
+.md-typeset .admonition>p,
+.md-typeset .admonition>ul,
+.md-typeset .admonition>ol,
+.md-typeset details>p {
   color: var(--md-default-fg-color);
 }
 
 /* Latte (Light Theme) Admonitions */
-[data-md-color-scheme="latte"] .md-typeset .note > .admonition-title,
-[data-md-color-scheme="latte"] .md-typeset .note > summary {
+[data-md-color-scheme="latte"] .md-typeset .note>.admonition-title,
+[data-md-color-scheme="latte"] .md-typeset .note>summary {
   background-color: rgba(30, 102, 245, 0.15);
   color: var(--ctp-latte-blue);
 }
 
-[data-md-color-scheme="latte"] .md-typeset .tip > .admonition-title,
-[data-md-color-scheme="latte"] .md-typeset .tip > summary {
+[data-md-color-scheme="latte"] .md-typeset .tip>.admonition-title,
+[data-md-color-scheme="latte"] .md-typeset .tip>summary {
   background-color: rgba(23, 146, 153, 0.15);
   color: var(--ctp-latte-teal);
 }
 
-[data-md-color-scheme="latte"] .md-typeset .warning > .admonition-title,
-[data-md-color-scheme="latte"] .md-typeset .warning > summary {
+[data-md-color-scheme="latte"] .md-typeset .warning>.admonition-title,
+[data-md-color-scheme="latte"] .md-typeset .warning>summary {
   background-color: rgba(254, 100, 11, 0.15);
   color: var(--ctp-latte-peach);
 }
 
-[data-md-color-scheme="latte"] .md-typeset .danger > .admonition-title,
-[data-md-color-scheme="latte"] .md-typeset .danger > summary {
+[data-md-color-scheme="latte"] .md-typeset .danger>.admonition-title,
+[data-md-color-scheme="latte"] .md-typeset .danger>summary {
   background-color: rgba(210, 15, 57, 0.15);
   color: var(--ctp-latte-red);
 }
 
-[data-md-color-scheme="latte"] .md-typeset .info > .admonition-title,
-[data-md-color-scheme="latte"] .md-typeset .info > summary {
+[data-md-color-scheme="latte"] .md-typeset .info>.admonition-title,
+[data-md-color-scheme="latte"] .md-typeset .info>summary {
   background-color: rgba(4, 165, 229, 0.15);
   color: var(--ctp-latte-sky);
 }
 
-[data-md-color-scheme="latte"] .md-typeset .success > .admonition-title,
-[data-md-color-scheme="latte"] .md-typeset .success > summary {
+[data-md-color-scheme="latte"] .md-typeset .success>.admonition-title,
+[data-md-color-scheme="latte"] .md-typeset .success>summary {
   background-color: rgba(64, 160, 43, 0.15);
   color: var(--ctp-latte-green);
 }
 
 /* Frappé (Dark Theme) Admonitions */
-[data-md-color-scheme="frappe"] .md-typeset .note > .admonition-title,
-[data-md-color-scheme="frappe"] .md-typeset .note > summary {
+[data-md-color-scheme="frappe"] .md-typeset .note>.admonition-title,
+[data-md-color-scheme="frappe"] .md-typeset .note>summary {
   background-color: rgba(140, 170, 238, 0.15);
   color: var(--ctp-frappe-blue);
 }
 
-[data-md-color-scheme="frappe"] .md-typeset .tip > .admonition-title,
-[data-md-color-scheme="frappe"] .md-typeset .tip > summary {
+[data-md-color-scheme="frappe"] .md-typeset .tip>.admonition-title,
+[data-md-color-scheme="frappe"] .md-typeset .tip>summary {
   background-color: rgba(129, 200, 190, 0.15);
   color: var(--ctp-frappe-teal);
 }
 
-[data-md-color-scheme="frappe"] .md-typeset .warning > .admonition-title,
-[data-md-color-scheme="frappe"] .md-typeset .warning > summary {
+[data-md-color-scheme="frappe"] .md-typeset .warning>.admonition-title,
+[data-md-color-scheme="frappe"] .md-typeset .warning>summary {
   background-color: rgba(239, 159, 118, 0.15);
   color: var(--ctp-frappe-peach);
 }
 
-[data-md-color-scheme="frappe"] .md-typeset .danger > .admonition-title,
-[data-md-color-scheme="frappe"] .md-typeset .danger > summary {
+[data-md-color-scheme="frappe"] .md-typeset .danger>.admonition-title,
+[data-md-color-scheme="frappe"] .md-typeset .danger>summary {
   background-color: rgba(231, 130, 132, 0.15);
   color: var(--ctp-frappe-red);
 }
 
-[data-md-color-scheme="frappe"] .md-typeset .info > .admonition-title,
-[data-md-color-scheme="frappe"] .md-typeset .info > summary {
+[data-md-color-scheme="frappe"] .md-typeset .info>.admonition-title,
+[data-md-color-scheme="frappe"] .md-typeset .info>summary {
   background-color: rgba(153, 209, 219, 0.15);
   color: var(--ctp-frappe-sky);
 }
 
-[data-md-color-scheme="frappe"] .md-typeset .success > .admonition-title,
-[data-md-color-scheme="frappe"] .md-typeset .success > summary {
+[data-md-color-scheme="frappe"] .md-typeset .success>.admonition-title,
+[data-md-color-scheme="frappe"] .md-typeset .success>summary {
   background-color: rgba(166, 209, 137, 0.15);
   color: var(--ctp-frappe-green);
 }
 
 /* Macchiato (Dark Theme) Admonitions */
-[data-md-color-scheme="macchiato"] .md-typeset .note > .admonition-title,
-[data-md-color-scheme="macchiato"] .md-typeset .note > summary {
+[data-md-color-scheme="macchiato"] .md-typeset .note>.admonition-title,
+[data-md-color-scheme="macchiato"] .md-typeset .note>summary {
   background-color: rgba(138, 173, 244, 0.15);
   color: var(--ctp-macchiato-blue);
 }
 
-[data-md-color-scheme="macchiato"] .md-typeset .tip > .admonition-title,
-[data-md-color-scheme="macchiato"] .md-typeset .tip > summary {
+[data-md-color-scheme="macchiato"] .md-typeset .tip>.admonition-title,
+[data-md-color-scheme="macchiato"] .md-typeset .tip>summary {
   background-color: rgba(139, 213, 202, 0.15);
   color: var(--ctp-macchiato-teal);
 }
 
-[data-md-color-scheme="macchiato"] .md-typeset .warning > .admonition-title,
-[data-md-color-scheme="macchiato"] .md-typeset .warning > summary {
+[data-md-color-scheme="macchiato"] .md-typeset .warning>.admonition-title,
+[data-md-color-scheme="macchiato"] .md-typeset .warning>summary {
   background-color: rgba(245, 169, 127, 0.15);
   color: var(--ctp-macchiato-peach);
 }
 
-[data-md-color-scheme="macchiato"] .md-typeset .danger > .admonition-title,
-[data-md-color-scheme="macchiato"] .md-typeset .danger > summary {
+[data-md-color-scheme="macchiato"] .md-typeset .danger>.admonition-title,
+[data-md-color-scheme="macchiato"] .md-typeset .danger>summary {
   background-color: rgba(237, 135, 150, 0.15);
   color: var(--ctp-macchiato-red);
 }
 
-[data-md-color-scheme="macchiato"] .md-typeset .info > .admonition-title,
-[data-md-color-scheme="macchiato"] .md-typeset .info > summary {
+[data-md-color-scheme="macchiato"] .md-typeset .info>.admonition-title,
+[data-md-color-scheme="macchiato"] .md-typeset .info>summary {
   background-color: rgba(145, 215, 227, 0.15);
   color: var(--ctp-macchiato-sky);
 }
 
-[data-md-color-scheme="macchiato"] .md-typeset .success > .admonition-title,
-[data-md-color-scheme="macchiato"] .md-typeset .success > summary {
+[data-md-color-scheme="macchiato"] .md-typeset .success>.admonition-title,
+[data-md-color-scheme="macchiato"] .md-typeset .success>summary {
   background-color: rgba(166, 218, 149, 0.15);
   color: var(--ctp-macchiato-green);
 }
 
 /* Mocha (Dark Theme) Admonitions */
-[data-md-color-scheme="mocha"] .md-typeset .note > .admonition-title,
-[data-md-color-scheme="mocha"] .md-typeset .note > summary {
+[data-md-color-scheme="mocha"] .md-typeset .note>.admonition-title,
+[data-md-color-scheme="mocha"] .md-typeset .note>summary {
   background-color: rgba(137, 180, 250, 0.15);
   color: var(--ctp-mocha-blue);
 }
 
-[data-md-color-scheme="mocha"] .md-typeset .tip > .admonition-title,
-[data-md-color-scheme="mocha"] .md-typeset .tip > summary {
+[data-md-color-scheme="mocha"] .md-typeset .tip>.admonition-title,
+[data-md-color-scheme="mocha"] .md-typeset .tip>summary {
   background-color: rgba(148, 226, 213, 0.15);
   color: var(--ctp-mocha-teal);
 }
 
-[data-md-color-scheme="mocha"] .md-typeset .warning > .admonition-title,
-[data-md-color-scheme="mocha"] .md-typeset .warning > summary {
+[data-md-color-scheme="mocha"] .md-typeset .warning>.admonition-title,
+[data-md-color-scheme="mocha"] .md-typeset .warning>summary {
   background-color: rgba(250, 179, 135, 0.15);
   color: var(--ctp-mocha-peach);
 }
 
-[data-md-color-scheme="mocha"] .md-typeset .danger > .admonition-title,
-[data-md-color-scheme="mocha"] .md-typeset .danger > summary {
+[data-md-color-scheme="mocha"] .md-typeset .danger>.admonition-title,
+[data-md-color-scheme="mocha"] .md-typeset .danger>summary {
   background-color: rgba(243, 139, 168, 0.15);
   color: var(--ctp-mocha-red);
 }
 
-[data-md-color-scheme="mocha"] .md-typeset .info > .admonition-title,
-[data-md-color-scheme="mocha"] .md-typeset .info > summary {
+[data-md-color-scheme="mocha"] .md-typeset .info>.admonition-title,
+[data-md-color-scheme="mocha"] .md-typeset .info>summary {
   background-color: rgba(137, 220, 235, 0.15);
   color: var(--ctp-mocha-sky);
 }
 
-[data-md-color-scheme="mocha"] .md-typeset .success > .admonition-title,
-[data-md-color-scheme="mocha"] .md-typeset .success > summary {
+[data-md-color-scheme="mocha"] .md-typeset .success>.admonition-title,
+[data-md-color-scheme="mocha"] .md-typeset .success>summary {
   background-color: rgba(166, 227, 161, 0.15);
   color: var(--ctp-mocha-green);
 }
 
 /* Improve code block contrast */
-.md-typeset pre > code {
+.md-typeset pre>code {
   background-color: var(--md-code-bg-color);
 }
 
@@ -960,11 +997,11 @@
 }
 
 /* Active tab - The complex selector is needed to override Material's default */
-.md-typeset .tabbed-set > input:nth-child(1):checked ~ .tabbed-labels > :nth-child(1),
-.md-typeset .tabbed-set > input:nth-child(2):checked ~ .tabbed-labels > :nth-child(2),
-.md-typeset .tabbed-set > input:nth-child(3):checked ~ .tabbed-labels > :nth-child(3),
-.md-typeset .tabbed-set > input:nth-child(4):checked ~ .tabbed-labels > :nth-child(4),
-.md-typeset .tabbed-set > input:nth-child(5):checked ~ .tabbed-labels > :nth-child(5) {
+.md-typeset .tabbed-set>input:nth-child(1):checked~.tabbed-labels> :nth-child(1),
+.md-typeset .tabbed-set>input:nth-child(2):checked~.tabbed-labels> :nth-child(2),
+.md-typeset .tabbed-set>input:nth-child(3):checked~.tabbed-labels> :nth-child(3),
+.md-typeset .tabbed-set>input:nth-child(4):checked~.tabbed-labels> :nth-child(4),
+.md-typeset .tabbed-set>input:nth-child(5):checked~.tabbed-labels> :nth-child(5) {
   color: var(--md-accent-fg-color) !important;
   border-bottom-color: var(--md-accent-fg-color) !important;
   opacity: 1;

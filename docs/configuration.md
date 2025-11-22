@@ -1,4 +1,4 @@
-# Configuration Guide: Catppuccin for MkDocs
+# Configuration Guide: Catppuccin for MkDocs!!!!!
 
 This guide will help you integrate all 4 Catppuccin flavors into your own MkDocs project.
 
@@ -9,6 +9,9 @@ Before you begin, make sure you have the following installed:
 ```bash
 pip install mkdocs
 pip install mkdocs-material
+python3 -m venv .venv
+source .venv/bin/activate
+mkdocs serve --livereload
 ```
 
 ## Step 1: Project Structure

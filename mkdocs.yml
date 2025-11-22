@@ -12,7 +12,7 @@ theme:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
-    - navigation.instant
+    # - navigation.instant
     - navigation.footer
     - navigation.top
     - navigation.tracking
@@ -65,6 +65,10 @@ nav:
 # Extra CSS for Catppuccin themes
 extra_css:
   - stylesheets/extra.css
+
+plugins:
+  - search
+
 
 # Markdown extensions
 markdown_extensions:
