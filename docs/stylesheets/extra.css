@@ -503,6 +503,12 @@
   color: var(--md-primary-fg-color--light);
 }
 
+/* Paths */
+.md-path__link {
+  color: var(--md-default-fg-color--light);
+}
+
+
 /* Buttons */
 .md-button {
   background-color: var(--md-primary-fg-color);
