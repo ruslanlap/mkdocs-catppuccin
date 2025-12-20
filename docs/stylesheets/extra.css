@@ -560,11 +560,6 @@
    UI Improvements
    ======================================== */
 
-/* Hide permalink symbols (¶) */
-.md-typeset .headerlink {
-  display: none;
-}
-
 /* Make headings bolder and ensure visibility */
 .md-typeset h1,
 .md-typeset h2,
