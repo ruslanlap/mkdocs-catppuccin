@@ -560,6 +560,11 @@
    UI Improvements
    ======================================== */
 
+/* Permalink symbols (¶) */
+.md-typeset .headerlink {
+  color: var(--md-default-fg-color);
+}
+
 /* Make headings bolder and ensure visibility */
 .md-typeset h1,
 .md-typeset h2,
