@@ -465,7 +465,8 @@
 /* Code blocks */
 .md-typeset pre {
   background-color: var(--md-code-bg-color);
-  border: 0.05rem solid var(--md-code-hl-color);
+  border-radius: 0.5rem;
+  overflow-x: auto;
 }
 
 .md-typeset code {
@@ -474,13 +475,18 @@
 }
 
 /* Inline code */
-.md-typeset :not(pre)>code {}
+.md-typeset :not(pre)>code {
+  padding: 0.1em 0.4em;
+  border-radius: 0.3rem;
+  font-size: 0.9em;
+  font-weight: 500;
+}
 
 /* Code copy button - beautiful styling */
 .md-clipboard {
 
   border-radius: 0.3rem;
-  opacity: 0.9;
+  opacity: 0.5;
 }
 
 .md-clipboard:hover {
@@ -1022,84 +1028,83 @@
   color: var(--md-default-fg-color);
 }
 
+
+
 /* ========================================
    Code Block Line Numbers Styling
    ======================================== */
 
-/* Line numbers container */
-.linenos {
+/* Container for the table */
+.md-typeset .highlight {
   background-color: var(--md-code-bg-color);
-  color: var(--md-code-hl-comment-color) !important;
-  border-right: 0.1rem solid var(--md-code-hl-color);
-  padding: 0.5rem 1rem 0.5rem 0.5rem !important;
-  vertical-align: top;
-  user-select: none;
-  min-width: 3rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1em 0;
 }
 
-/* Line numbers div container */
-.linenodiv {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Line numbers pre element */
-.linenodiv pre {
+/* Reset basic pre styling when used inside highlight table */
+.md-typeset .highlighttable pre {
   background-color: transparent !important;
-  border: none !important;
-  padding: 0 !important;
+  border-radius: 0 !important;
   margin: 0 !important;
-  text-align: right !important;
-  color: var(--md-code-hl-comment-color) !important;
-  opacity: 0.6 !important;
-  font-size: 0.85em !important;
+  padding: 0.7em 0 !important;
+  white-space: pre-wrap !important;
+  word-wrap: break-word !important;
 }
 
-/* Line numbers on hover - make them more visible */
-.linenos:hover .linenodiv pre {
-  opacity: 0.9 !important;
-}
-
-/* Individual line number spans */
-.linenodiv span.normal {
-  display: block;
-  color: inherit !important;
-  text-align: right !important;
-  padding-right: 0.5rem;
-}
-
-/* Line number links */
-.linenodiv a {
-  color: inherit !important;
-  text-decoration: none !important;
-  display: inline-block;
-  width: 100%;
-  text-align: right;
-}
-
-.linenodiv a:hover {
-  color: var(--md-accent-fg-color) !important;
-  opacity: 1 !important;
-}
-
-/* Highlight table styling */
+/* Table structure */
 .highlighttable {
-  border-spacing: 0 !important;
-  border-collapse: collapse !important;
   width: 100%;
-}
-
-.highlighttable tr {
-  border: none !important;
+  border-spacing: 0;
+  display: table;
 }
 
 .highlighttable td {
-  padding: 0 !important;
-  border: none !important;
+  padding: 0;
+  vertical-align: top;
 }
 
-/* Code cell (right side) */
-.highlighttable td.code {
-  padding-left: 1rem !important;
-  width: 100%;
+/* Line numbers column */
+.highlighttable .linenos {
+  min-width: 2.5em;
+  user-select: none;
+  border: none !important;
+  border-right: none !important;
+}
+
+/* Line numbers text */
+.highlighttable .linenos pre {
+  text-align: right;
+  padding-right: 0.7em !important;
+  color: var(--md-default-fg-color);
+  opacity: 0.5;
+}
+
+
+
+/* Code content text */
+.highlighttable .code pre {
+  padding-left: 0.7em !important;
+  overflow: visible;
+}
+
+/* Fix for dark mode backgrounds to ensure seamless look */
+[data-md-color-scheme="frappe"] .highlighttable,
+[data-md-color-scheme="macchiato"] .highlighttable,
+[data-md-color-scheme="mocha"] .highlighttable {
+  background-color: var(--md-code-bg-color);
+}
+
+/* Syntax highlighting refinements */
+.highlight .c,
+.highlight .cm,
+.highlight .c1 {
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.highlight .k,
+.highlight .kn,
+.highlight .kd {
+  font-weight: 600;
 }
