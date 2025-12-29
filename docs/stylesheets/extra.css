@@ -1076,8 +1076,24 @@
 .highlighttable .linenos pre {
   text-align: right;
   padding-right: 0.7em !important;
-  color: var(--md-default-fg-color);
-  opacity: 0.5;
+  background: linear-gradient(to bottom,
+      #f38ba8,
+      /* Red */
+      #fab387,
+      /* Peach */
+      #f9e2af,
+      /* Yellow */
+      #a6e3a1,
+      /* Green */
+      #89b4fa,
+      /* Blue */
+      #cba6f7
+      /* Mauve */
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.8;
 }
 
 
