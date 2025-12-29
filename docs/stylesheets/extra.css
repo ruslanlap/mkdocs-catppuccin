@@ -1022,3 +1022,39 @@
   color: var(--md-default-fg-color);
 }
 
+/* ========================================
+   Code Block Line Numbers Styling
+   ======================================== */
+
+/* Line numbers container */
+.linenos {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-code-hl-number-color) !important;
+}
+
+/* Line numbers text - use overlay colors for better visibility */
+.linenodiv pre {
+  color: var(--md-code-hl-comment-color) !important;
+  opacity: 0.7 !important;
+}
+
+/* Line numbers on hover - make them more visible */
+.linenos:hover .linenodiv pre {
+  opacity: 1 !important;
+  color: var(--md-default-fg-color) !important;
+}
+
+/* Line number links */
+.linenodiv a {
+  color: var(--md-code-hl-comment-color) !important;
+}
+
+.linenodiv a:hover {
+  color: var(--md-accent-fg-color) !important;
+}
+
+/* Ensure line numbers have proper spacing and visibility */
+.linenodiv span[class] {
+  color: var(--md-code-hl-comment-color) !important;
+}
+
