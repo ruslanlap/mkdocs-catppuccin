@@ -1030,6 +1030,10 @@
 .linenos {
   background-color: var(--md-code-bg-color);
   color: var(--md-code-hl-number-color) !important;
+  border-right: 0.05rem solid var(--md-code-hl-color);
+  padding: 0 0.75rem !important;
+  vertical-align: top;
+  user-select: none;
 }
 
 /* Line numbers text - use overlay colors for better visibility */
@@ -1054,7 +1058,12 @@
 }
 
 /* Ensure line numbers have proper spacing and visibility */
-.linenodiv span[class] {
+.linenodiv span.normal {
   color: var(--md-code-hl-comment-color) !important;
+  opacity: 0.7;
 }
 
+.linenos:hover span.normal {
+  opacity: 1;
+  color: var(--md-default-fg-color) !important;
+}
