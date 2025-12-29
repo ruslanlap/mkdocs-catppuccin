@@ -1029,41 +1029,77 @@
 /* Line numbers container */
 .linenos {
   background-color: var(--md-code-bg-color);
-  color: var(--md-code-hl-number-color) !important;
-  border-right: 0.05rem solid var(--md-code-hl-color);
-  padding: 0 0.75rem !important;
+  color: var(--md-code-hl-comment-color) !important;
+  border-right: 0.1rem solid var(--md-code-hl-color);
+  padding: 0.5rem 1rem 0.5rem 0.5rem !important;
   vertical-align: top;
   user-select: none;
+  min-width: 3rem;
 }
 
-/* Line numbers text - use overlay colors for better visibility */
+/* Line numbers div container */
+.linenodiv {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Line numbers pre element */
 .linenodiv pre {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: right !important;
   color: var(--md-code-hl-comment-color) !important;
-  opacity: 0.7 !important;
+  opacity: 0.6 !important;
+  font-size: 0.85em !important;
 }
 
 /* Line numbers on hover - make them more visible */
 .linenos:hover .linenodiv pre {
-  opacity: 1 !important;
-  color: var(--md-default-fg-color) !important;
+  opacity: 0.9 !important;
+}
+
+/* Individual line number spans */
+.linenodiv span.normal {
+  display: block;
+  color: inherit !important;
+  text-align: right !important;
+  padding-right: 0.5rem;
 }
 
 /* Line number links */
 .linenodiv a {
-  color: var(--md-code-hl-comment-color) !important;
+  color: inherit !important;
+  text-decoration: none !important;
+  display: inline-block;
+  width: 100%;
+  text-align: right;
 }
 
 .linenodiv a:hover {
   color: var(--md-accent-fg-color) !important;
+  opacity: 1 !important;
 }
 
-/* Ensure line numbers have proper spacing and visibility */
-.linenodiv span.normal {
-  color: var(--md-code-hl-comment-color) !important;
-  opacity: 0.7;
+/* Highlight table styling */
+.highlighttable {
+  border-spacing: 0 !important;
+  border-collapse: collapse !important;
+  width: 100%;
 }
 
-.linenos:hover span.normal {
-  opacity: 1;
-  color: var(--md-default-fg-color) !important;
+.highlighttable tr {
+  border: none !important;
+}
+
+.highlighttable td {
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Code cell (right side) */
+.highlighttable td.code {
+  padding-left: 1rem !important;
+  width: 100%;
 }
